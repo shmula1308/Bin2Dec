@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <script src="Scripts/script.js" defer></script>
+    <title>bin2Dec converter</title>
+  </head>
+  <body>
+    <div class="logo-container">
+      <img
+        src="images/binarynumbers.png"
+        alt="circular image of binary numbers"
+        class="logo"
+      />
+    </div>
+    <h1>Binary to decimal converter</h1>
+    <h1>Decimal to binary converter</h1>
+    <div class="form-container">
+      <form>
+        <div class="options-container">
+          <div class="from-container">
+            <label for="from-unit">From</label>
+            <select name="from-unit" id="from-unit">
+              <option value="binary">Binary</option>
+              <option value="decimal">Decimal</option>
+            </select>
+          </div>
+          <div class="to-container">
+            <label for="to-unit">To</label>
+            <select name="to-unit" id="to-unit">
+              <option value="decimal">Decimal</option>
+              <option value="binary">Binary</option>
+            </select>
+          </div>
+        </div>
+        <label for="input" id="binary-input">Enter binary number</label><br />
+        <label for="input" id="decimal-input">Enter decimal number</label><br />
+        <input
+          type="text"
+          id="binary-input"
+          maxlength="8"
+          placeholder="enter only zeros or ones..."
+        /><br />
+        <input
+          type="text"
+          id="decimal-input"
+          maxlength="8"
+          placeholder="enter a decimal number..."
+        /><br />
+        <div class="button-container">
+          <button type="button" class="btn">
+            <i class="fas fa-sync"></i>
+            Convert
+          </button>
+          <button type="button" class="btn">
+            <i class="fas fa-times"></i>
+            Reset
+          </button>
+          <button type="button" class="btn">
+            <i class="fas fa-retweet"></i>
+            Swap
+          </button>
+        </div>
+        <label for="result" id="decimal-result">Decimal number</label><br />
+        <label for="result" id="binary-result">Binary number</label><br />
+        <textarea name="" id="result" cols="40" rows="5" readonly></textarea>
+      </form>
+    </div>
+    <!-- .form-container -->
+  </body>
+</html>
