@@ -14,6 +14,12 @@ numberInput.addEventListener('keyup', function(ev) {
 
 convertBtn.addEventListener('mouseup', (ev) => {
     let result = bin2Dec(binNumber);
+   
+    if(result === undefined) {
+        resultContainer.innerText = "";
+        return;
+    } 
+    
     displayResult(result); 
 })
 
@@ -28,7 +34,7 @@ function bin2Dec(binNumber) {
     let decNumber = 0;
     let power = binNumber.length - 1;
     for(let i = 0; i < binNumber.length; i++) {
-        if(binNumber[i] != 0 && binNumber[i] != 1 ) {
+        if(binNumber[i] !== '0' && binNumber[i] !== '1' ) {
             nonBinaryInput();
             return;
         } 
