@@ -29,7 +29,7 @@
         class="logo"
       />
       <div class="form-container">
-        <form>
+        <form id="formEl">
           <div class="options-container">
             <div class="unit-container">
               <i class="fas fa-sort-down"></i>
@@ -68,19 +68,19 @@
             maxlength="8"
             placeholder="enter a decimal number..."
           />
-          <p class="notify-wrong-input-text">
+          <p class="notify-wrong-input-text" id="notification">
             Please enter only binary numbers
           </p>
           <div class="button-container">
-            <button type="button" class="btn btn-accent">
+            <button type="button" class="btn btn-accent" id="convert">
               <i class="fas fa-sync btn-icon"></i>
               Convert
             </button>
-            <button type="button" class="btn">
+            <button type="reset" class="btn" id="reset">
               <i class="fas fa-times btn-icon"></i>
               Reset
             </button>
-            <button type="button" class="btn">
+            <button type="button" class="btn" id="swap">
               <i class="fas fa-retweet btn-icon"></i>
               Swap
             </button>
@@ -92,7 +92,7 @@
             >Binary number</label
           >
           <div id="result-container" class="result-box">
-            <p class="result-number"></p>
+            <p class="result-container" id="result-number"></p>
           </div>
         </form>
       </div>
