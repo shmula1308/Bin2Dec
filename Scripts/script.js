@@ -15,7 +15,7 @@ numberInput.addEventListener('keyup', function(ev) {
 convertBtn.addEventListener('mouseup', (ev) => {
     let result = bin2Dec(binNumber);
    
-    if(result === undefined) {
+    if(result === undefined || binNumber === "" ) {
         resultContainer.innerText = "";
         return;
     } 
