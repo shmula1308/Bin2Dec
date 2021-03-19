@@ -135,6 +135,14 @@ img {
   cursor: pointer;
 }
 
+#dec-input {
+  display: none;
+}
+
+#bin-input {
+  display: block;
+}
+
 #decimal-input {
   display: none;
 }
@@ -209,7 +217,7 @@ img {
 
 .result-container {
   opacity: 0;
-  transition: opacity 0.3s ease-in;
+  transition: opacity 0.2s ease-in;
 }
 
 .show-number {

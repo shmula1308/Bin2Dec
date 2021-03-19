@@ -35,16 +35,16 @@
               <i class="fas fa-sort-down"></i>
               <label for="from-unit" class="unit-label">From</label>
               <select name="from-unit" id="from-unit" class="select-unit">
-                <option value="binary">Binary</option>
-                <option value="decimal">Decimal</option>
+                <option value="from-binary">Binary</option>
+                <option value="from-decimal">Decimal</option>
               </select>
             </div>
             <div class="unit-container">
               <i class="fas fa-sort-down"></i>
               <label for="to-unit" class="unit-label">To</label>
               <select name="to-unit" id="to-unit" class="select-unit">
-                <option value="decimal">Decimal</option>
-                <option value="binary">Binary</option>
+                <option value="to-decimal">Decimal</option>
+                <option value="to-binary">Binary</option>
               </select>
             </div>
           </div>
@@ -56,17 +56,17 @@
           >
           <input
             type="text"
-            id="binary-input"
+            id="bin-input"
             class="number-input"
             maxlength="8"
             placeholder="Enter max 8 binary numbers..."
-          /><br />
+          />
           <input
             type="text"
-            id="decimal-input"
+            id="dec-input"
             class="number-input"
             maxlength="8"
-            placeholder="enter a decimal number..."
+            placeholder="Enter max 8 decimal numbers..."
           />
           <p class="notify-wrong-input-text" id="notification">
             Please enter only binary numbers
