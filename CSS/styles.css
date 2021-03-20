@@ -38,6 +38,7 @@ img {
 }
 .app-container {
   max-width: 85%;
+  height: 90vh;
   margin: 0 auto;
   text-align: center;
   border-radius: 3px;
@@ -213,6 +214,7 @@ img {
   height: 150px;
   border-radius: 3px;
   background-color: #d3e4ec;
+  margin-bottom: 2em;
 }
 
 .result-container {
