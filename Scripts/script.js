@@ -52,9 +52,6 @@ convertBtn.addEventListener('mouseup', (ev) => {
         result = result.split("").reverse().join("");
         displayResult(result);
     }
-    
-    
-    // displayResult(result); 
 })
 
 
@@ -64,20 +61,22 @@ resetBtn.addEventListener('mouseup', resetTitle);
 
 swapUnitBtn.addEventListener('mouseup',(ev) => {
     if(fromOptionUnit === 'from-binary') {
+        console.log(fromOptionUnit)
         allSelectBoxes[0].options[1].selected = true;
         fromOptionUnit = allSelectBoxes[0].options[1].value;
         
         allSelectBoxes[1].options[1].selected = true;
         toOptionUnit = allSelectBoxes[1].options[1].value;
-        resetForm();
+        // resetForm();
         changeLabelsAndTitle();   
     } else if(fromOptionUnit === 'from-decimal') {
+        console.log(fromOptionUnit)
         allSelectBoxes[0].options[0].selected = true;
         fromOptionUnit = allSelectBoxes[0].options[0].value;
 
         allSelectBoxes[1].options[0].selected = true;
         toOptionUnit = allSelectBoxes[1].options[0].value;
-        resetForm();
+        // resetForm();
         changeLabelsAndTitle(); 
     }
 })
@@ -89,25 +88,29 @@ allSelectBoxes.forEach(selBox => {
                 toSelect[1].selected = true;
                 fromOptionUnit = ev.target.value;
                 toOptionUnit = toSelect[1].value;
-                resetForm();
+                // resetForm();
+                resultContainer.classList.remove('show-number');
                 changeLabelsAndTitle(); 
              } else if(ev.target.value === 'from-binary') {
                 toSelect[0].selected = true;
                 fromOptionUnit = ev.target.value;
                 toOptionUnit = toSelect[0].value;
-                resetForm();
+                // resetForm();
+                resultContainer.classList.remove('show-number');
                 changeLabelsAndTitle(); 
              } else if(ev.target.value === 'to-binary') {
                 fromSelect[1].selected = true;
                 toOptionUnit = ev.target.value;
                 fromOptionUnit = fromSelect[1].value;
-                resetForm();
+                // resetForm();
+                resultContainer.classList.remove('show-number');
                 changeLabelsAndTitle();
              } else if (ev.target.value === 'to-decimal') {
                 fromSelect[0].selected = true;
                 toOptionUnit = ev.target.value;
                 fromOptionUnit = fromSelect[0].value;
-                resetForm();
+                // resetForm();
+                resultContainer.classList.remove('show-number');
                 changeLabelsAndTitle(); 
              }
         })
@@ -115,6 +118,7 @@ allSelectBoxes.forEach(selBox => {
 })
 
 function bin2Dec(binNumber) {
+    // binNumber = binNumber.match(/[0-1]+/g).join("");
     let decNumber = 0;
     let power = binNumber.length - 1;
     for(let i = 0; i < binNumber.length; i++) {
@@ -153,7 +157,7 @@ function resetForm() {
     binResultLabel.style.display = 'none';
     binInput.style.display = 'block';
     decInput.style.display = 'none';
-    // fromOptionUnit = 'from-binary';
+    fromOptionUnit = 'from-binary';
     // toOptionUnit = 'to-decimal';
     notifyWrongInput.classList.remove('active-alert');
     resultContainer.classList.remove('show-number');
