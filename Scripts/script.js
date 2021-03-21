@@ -122,6 +122,7 @@ toSelect.addEventListener('change', function(ev) {
         binNumber = "";
         decNumber = "";
         resultContainer.classList.remove('show-number');
+        notifyWrongInput.classList.remove('active-alert');
         changeLabelsAndTitle();
     } else if (ev.target.value === 'to-decimal') {
         fromSelect[0].selected = true;
