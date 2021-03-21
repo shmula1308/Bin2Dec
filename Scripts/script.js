@@ -68,6 +68,11 @@ swapUnitBtn.addEventListener('mouseup',(ev) => {
         allSelectBoxes[1].options[1].selected = true;
         toOptionUnit = allSelectBoxes[1].options[1].value;
         // resetForm();
+        binInput.value = "";
+        decInput.value = "";  
+        binNumber = "";
+        decNumber = "";  
+        notifyWrongInput.classList.remove('active-alert');
         changeLabelsAndTitle();   
     } else if(fromOptionUnit === 'from-decimal') {
         // console.log(fromOptionUnit)
@@ -77,45 +82,15 @@ swapUnitBtn.addEventListener('mouseup',(ev) => {
         allSelectBoxes[1].options[0].selected = true;
         toOptionUnit = allSelectBoxes[1].options[0].value;
         // resetForm();
+        binInput.value = "";
+        decInput.value = "";
+        binNumber = "";
+        decNumber = ""; 
         changeLabelsAndTitle(); 
     }
 })
 
-// allSelectBoxes.forEach(selBox => {
-//     Array.from(selBox).forEach(option => {
-//         option.addEventListener('click',(ev) => {
-//              if(ev.target.value === 'from-decimal') {
-//                 toSelect[1].selected = true;
-//                 fromOptionUnit = ev.target.value;
-//                 toOptionUnit = toSelect[1].value;
-//                 // resetForm();
-//                 resultContainer.classList.remove('show-number');
-//                 changeLabelsAndTitle(); 
-//              } else if(ev.target.value === 'from-binary') {
-//                 toSelect[0].selected = true;
-//                 fromOptionUnit = ev.target.value;
-//                 toOptionUnit = toSelect[0].value;
-//                 // resetForm();
-//                 resultContainer.classList.remove('show-number');
-//                 changeLabelsAndTitle(); 
-//              } else if(ev.target.value === 'to-binary') {
-//                 fromSelect[1].selected = true;
-//                 toOptionUnit = ev.target.value;
-//                 fromOptionUnit = fromSelect[1].value;
-//                 // resetForm();
-//                 resultContainer.classList.remove('show-number');
-//                 changeLabelsAndTitle();
-//              } else if (ev.target.value === 'to-decimal') {
-//                 fromSelect[0].selected = true;
-//                 toOptionUnit = ev.target.value;
-//                 fromOptionUnit = fromSelect[0].value;
-//                 // resetForm();
-//                 resultContainer.classList.remove('show-number');
-//                 changeLabelsAndTitle(); 
-//              }
-//         })
-//     })
-// })
+
 
 fromSelect.addEventListener('change',function(ev) {
     if(ev.target.value === 'from-decimal') {
