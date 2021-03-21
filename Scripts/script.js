@@ -61,7 +61,7 @@ resetBtn.addEventListener('mouseup', resetTitle);
 
 swapUnitBtn.addEventListener('mouseup',(ev) => {
     if(fromOptionUnit === 'from-binary') {
-        console.log(fromOptionUnit)
+        // console.log(fromOptionUnit)
         allSelectBoxes[0].options[1].selected = true;
         fromOptionUnit = allSelectBoxes[0].options[1].value;
         
@@ -70,7 +70,7 @@ swapUnitBtn.addEventListener('mouseup',(ev) => {
         // resetForm();
         changeLabelsAndTitle();   
     } else if(fromOptionUnit === 'from-decimal') {
-        console.log(fromOptionUnit)
+        // console.log(fromOptionUnit)
         allSelectBoxes[0].options[0].selected = true;
         fromOptionUnit = allSelectBoxes[0].options[0].value;
 
@@ -81,40 +81,83 @@ swapUnitBtn.addEventListener('mouseup',(ev) => {
     }
 })
 
-allSelectBoxes.forEach(selBox => {
-    Array.from(selBox).forEach(option => {
-        option.addEventListener('click',(ev) => {
-             if(ev.target.value === 'from-decimal') {
-                toSelect[1].selected = true;
-                fromOptionUnit = ev.target.value;
-                toOptionUnit = toSelect[1].value;
-                // resetForm();
-                resultContainer.classList.remove('show-number');
-                changeLabelsAndTitle(); 
-             } else if(ev.target.value === 'from-binary') {
-                toSelect[0].selected = true;
-                fromOptionUnit = ev.target.value;
-                toOptionUnit = toSelect[0].value;
-                // resetForm();
-                resultContainer.classList.remove('show-number');
-                changeLabelsAndTitle(); 
-             } else if(ev.target.value === 'to-binary') {
-                fromSelect[1].selected = true;
-                toOptionUnit = ev.target.value;
-                fromOptionUnit = fromSelect[1].value;
-                // resetForm();
-                resultContainer.classList.remove('show-number');
-                changeLabelsAndTitle();
-             } else if (ev.target.value === 'to-decimal') {
-                fromSelect[0].selected = true;
-                toOptionUnit = ev.target.value;
-                fromOptionUnit = fromSelect[0].value;
-                // resetForm();
-                resultContainer.classList.remove('show-number');
-                changeLabelsAndTitle(); 
-             }
-        })
-    })
+// allSelectBoxes.forEach(selBox => {
+//     Array.from(selBox).forEach(option => {
+//         option.addEventListener('click',(ev) => {
+//              if(ev.target.value === 'from-decimal') {
+//                 toSelect[1].selected = true;
+//                 fromOptionUnit = ev.target.value;
+//                 toOptionUnit = toSelect[1].value;
+//                 // resetForm();
+//                 resultContainer.classList.remove('show-number');
+//                 changeLabelsAndTitle(); 
+//              } else if(ev.target.value === 'from-binary') {
+//                 toSelect[0].selected = true;
+//                 fromOptionUnit = ev.target.value;
+//                 toOptionUnit = toSelect[0].value;
+//                 // resetForm();
+//                 resultContainer.classList.remove('show-number');
+//                 changeLabelsAndTitle(); 
+//              } else if(ev.target.value === 'to-binary') {
+//                 fromSelect[1].selected = true;
+//                 toOptionUnit = ev.target.value;
+//                 fromOptionUnit = fromSelect[1].value;
+//                 // resetForm();
+//                 resultContainer.classList.remove('show-number');
+//                 changeLabelsAndTitle();
+//              } else if (ev.target.value === 'to-decimal') {
+//                 fromSelect[0].selected = true;
+//                 toOptionUnit = ev.target.value;
+//                 fromOptionUnit = fromSelect[0].value;
+//                 // resetForm();
+//                 resultContainer.classList.remove('show-number');
+//                 changeLabelsAndTitle(); 
+//              }
+//         })
+//     })
+// })
+
+fromSelect.addEventListener('change',function(ev) {
+    if(ev.target.value === 'from-decimal') {
+        toSelect[1].selected = true;
+        fromOptionUnit = ev.target.value;
+        toOptionUnit = toSelect[1].value;
+        binNumber = "";
+        decNumber = "";
+        notifyWrongInput.classList.remove('active-alert');
+        resultContainer.classList.remove('show-number');
+        changeLabelsAndTitle(); 
+    } else if(ev.target.value === 'from-binary') {
+        toSelect[0].selected = true;
+        fromOptionUnit = ev.target.value;
+        toOptionUnit = toSelect[0].value;
+        binNumber = "";
+        decNumber = "";
+        resultContainer.classList.remove('show-number');
+        changeLabelsAndTitle(); 
+    } 
+})
+
+toSelect.addEventListener('change', function(ev) {
+    if(ev.target.value === 'to-binary') {
+        console.log(fromSelect[1]);
+        fromSelect[1].selected = true;
+        toOptionUnit = ev.target.value;
+        fromOptionUnit = fromSelect[1].value;
+        binNumber = "";
+        decNumber = "";
+        resultContainer.classList.remove('show-number');
+        changeLabelsAndTitle();
+    } else if (ev.target.value === 'to-decimal') {
+        fromSelect[0].selected = true;
+        toOptionUnit = ev.target.value;
+        fromOptionUnit = fromSelect[0].value;
+        binNumber = "";
+        decNumber = "";
+        notifyWrongInput.classList.remove('active-alert');
+        resultContainer.classList.remove('show-number');
+        changeLabelsAndTitle(); 
+    }
 })
 
 function bin2Dec(binNumber) {
