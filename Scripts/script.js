@@ -99,6 +99,8 @@ fromSelect.addEventListener('change',function(ev) {
         toOptionUnit = toSelect[1].value;
         binNumber = "";
         decNumber = "";
+        binInput.value = "";
+        decInput.value = "";
         notifyWrongInput.classList.remove('active-alert');
         resultContainer.classList.remove('show-number');
         changeLabelsAndTitle(); 
@@ -108,6 +110,8 @@ fromSelect.addEventListener('change',function(ev) {
         toOptionUnit = toSelect[0].value;
         binNumber = "";
         decNumber = "";
+        binInput.value = "";
+        decInput.value = "";
         resultContainer.classList.remove('show-number');
         changeLabelsAndTitle(); 
     } 
@@ -121,6 +125,8 @@ toSelect.addEventListener('change', function(ev) {
         fromOptionUnit = fromSelect[1].value;
         binNumber = "";
         decNumber = "";
+        binInput.value = "";
+        decInput.value = "";
         resultContainer.classList.remove('show-number');
         notifyWrongInput.classList.remove('active-alert');
         changeLabelsAndTitle();
@@ -130,6 +136,8 @@ toSelect.addEventListener('change', function(ev) {
         fromOptionUnit = fromSelect[0].value;
         binNumber = "";
         decNumber = "";
+        binInput.value = "";
+        decInput.value = "";
         notifyWrongInput.classList.remove('active-alert');
         resultContainer.classList.remove('show-number');
         changeLabelsAndTitle(); 
